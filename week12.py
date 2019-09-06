@@ -7,6 +7,7 @@ class Tasit():
         self.km_durumu = km_durumu
         self.model = model
         self.satis_yili = satis_yili
+        self.__tasit_miktari.append("1")
 
     def koltuk_sayisi_goster(self):
         print("Koltuk sayisi: ", self.koltuk_sayisi)
@@ -17,11 +18,13 @@ class Tasit():
     def km_durumu_gonder(self):
         return self.km_durumu
 
+    @classmethod
     def __tasit_sayisi_guncelle(self):
         self.__tasit_miktari.append("1")
 
-    def __tasit_miktari_goster(self):
-        uzunluk = len(self.__tasit_miktari)
+    @classmethod
+    def __tasit_miktari_goster(cls):
+        uzunluk = len(cls.__tasit_miktari)
         print("Tasit Miktari: ", uzunluk)
 
 
@@ -65,6 +68,5 @@ print("Tasit km durumu: ",tasit.km_durumu_gonder())
 
 tasit._Tasit__tasit_sayisi_guncelle()
 tasit._Tasit__tasit_miktari_goster()
-araba._Tasit__tasit_miktari_goster()  
 
 araba.arabanin_durumunu_goster()
